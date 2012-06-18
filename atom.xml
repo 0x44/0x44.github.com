@@ -4,7 +4,7 @@
   <title><![CDATA[0x44.org]]></title>
   <link href="http://0x44.org/atom.xml" rel="self"/>
   <link href="http://0x44.org/"/>
-  <updated>2012-06-17T21:54:42+08:00</updated>
+  <updated>2012-06-19T02:19:24+08:00</updated>
   <id>http://0x44.org/</id>
   <author>
     <name><![CDATA[Ding Deng]]></name>
@@ -12,6 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[名字的国际化]]></title>
+    <link href="http://0x44.org/blog/2012/06/18/i18n-of-names/"/>
+    <updated>2012-06-18T00:00:00+08:00</updated>
+    <id>http://0x44.org/blog/2012/06/18/i18n-of-names</id>
+    <content type="html"><![CDATA[<p>前几天为了装 <a href="http://www.amazon.com/gp/kindle/ipad">Kindle for iPad</a>，尝试把 Apple ID 从中国区切到美国区，中间注意到一个细节，就是中国区的名字显示方式是“姓 + 名”，而美国区的显示方式则是“First name + Last name”，符合中英两种语言在显示名字顺序方面的不同习惯。</p>
+
+<p>按照通常的译法，“First name”为“名”，“Last name”为“姓”，所以绝大多数英文网站在做中文本地化的时候直接就把名字显示成了“名 + 姓”，而这并不符合中文的表达习惯。Apple 能根据不同的语言选择不同的显示顺序，说明他们在处理名字的时候考虑到了国际化方面的问题。</p>
+
+<p>那么，是不是显示对顺序就够了呢？我们再来看两个例子。</p>
+
+<h2>名字规则</h2>
+
+<ul>
+<li><p>冰岛人</p>
+
+<p>Björk Guðmundsdóttir 是冰岛歌手<a href="http://zh.wikipedia.org/wiki/%E7%A2%A7%E7%8E%89_(%E6%AD%8C%E6%89%8B)">比约克</a>的全名。Björk 是她的名，但 Guðmundsdóttir 却不是她的姓。Guðmundsdóttir 由 Guðmund 与 sdóttir 两部分组成。Guðmund 表示她父亲的名（Guðmundur），sdóttir 则表示她的性别：sson 为男，sdóttir 为女。</p></li>
+<li><p>西班牙人</p>
+
+<p>西班牙人的名字里面一般包含两个姓。假设有一个西班牙美女叫作 María-Jose Carreño Quiñones，那么 María-Jose 是她的名，Carreño 是她父亲的姓，而 Quiñones 则是她母亲的姓。</p></li>
+</ul>
+
+
+<p>先姓后名、先名后姓、有名无姓、有两个姓，这些都还算简单的，至少几句话就可以表达清楚。更多更复杂的名字规则可以参考<a href="http://www.w3.org/International/questions/qa-personal-names#morenames">这里</a>的一些链接。</p>
+
+<p>拿这些例子到 Apple 网站上验证了一下，发现 Apple 也并没有国际化得那么彻底。也许他们只是在显示顺序方面做了一些考虑。</p>
+
+<h2>解决方案</h2>
+
+<p>即使能把所有的名字规则都一一归纳出来，在具体实施的时候还是会碰到下面两个问题：</p>
+
+<ul>
+<li>千奇百怪的规则，数据怎么集中存储？</li>
+<li>国家、民族、语言、名字规则并不是一一对应的，怎么判断用户的实际情况从而给他设定一个正确的表达形式？</li>
+</ul>
+
+
+<p>上述原因导致我们基本没有办法使用一种通用的模式来精确地存储与展示各种不同规则的名字。为此，W3C 主管国际化方面活动的 Richard Ishida 在其起草的一份<a href="http://www.w3.org/International/questions/qa-personal-names">文档</a>中提出了如下几条建议：</p>
+
+<ul>
+<li>如果没有特殊需要，用全名，而不是姓、名分开。</li>
+<li>确实需要姓、名分开的，用 Family name、Given name 这种表达形式，而不是 First name、Last name 这种隐含了顺序方面意义的表达形式。</li>
+<li>如果姓、名分开只是为了叫起来亲切一点，那么不如使用“全名 + 昵称”组合，这样还可以照顾到那些有名无姓的名字形式。</li>
+</ul>
+
+
+<h2>参考资料</h2>
+
+<ul>
+<li><a href="http://www.w3.org/International/questions/qa-personal-names">Richard Ishida: Personal names around the world</a> 以及<a href="http://www.w3.org/International/wiki/Personal_names">相关评论</a>。</li>
+<li><a href="http://www.zevils.com/2007/12/internationalization-of-names.html">Matthew Sachs: Internationalization of Names</a>。</li>
+<li><a href="http://core.trac.wordpress.org/ticket/6148">WordPress Ticket #6148: Internationalization of personal names</a>。</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Shakespeare and Company]]></title>
