@@ -1,0 +1,43 @@
+---
+layout: post
+title: "名字的国际化"
+---
+
+前几天为了装 [Kindle for iPad](http://www.amazon.com/gp/kindle/ipad)，尝试把 Apple ID 从中国区切到美国区，中间注意到一个细节，就是中国区的名字显示方式是“姓 + 名”，而美国区的显示方式则是“First name + Last name”，符合中英两种语言在显示名字顺序方面的不同习惯。
+
+按照通常的译法，“First name”为“名”，“Last name”为“姓”，所以绝大多数英文网站在做中文本地化的时候直接就把名字显示成了“名 + 姓”，而这并不符合中文的表达习惯。Apple 能根据不同的语言选择不同的显示顺序，说明他们在处理名字的时候考虑到了国际化方面的问题。
+
+那么，是不是显示对顺序就够了呢？我们再来看两个例子。
+
+## 名字规则
+
+*   冰岛人
+
+    Björk Guðmundsdóttir 是冰岛歌手[比约克](http://zh.wikipedia.org/wiki/%E7%A2%A7%E7%8E%89_\(%E6%AD%8C%E6%89%8B\))的全名。Björk 是她的名，但 Guðmundsdóttir 却不是她的姓。Guðmundsdóttir 由 Guðmund 与 sdóttir 两部分组成。Guðmund 表示她父亲的名（Guðmundur），sdóttir 则表示她的性别：sson 为男，sdóttir 为女。
+
+*   西班牙人
+
+    西班牙人的名字里面一般包含两个姓。假设有一个西班牙美女叫作 María-Jose Carreño Quiñones，那么 María-Jose 是她的名，Carreño 是她父亲的姓，而 Quiñones 则是她母亲的姓。
+
+先姓后名、先名后姓、有名无姓、有两个姓，这些都还算简单的，至少几句话就可以表达清楚。更多更复杂的名字规则可以参考[这里](http://www.w3.org/International/questions/qa-personal-names#morenames)的一些链接。
+
+拿这些例子到 Apple 网站上验证了一下，发现 Apple 也并没有国际化得那么彻底。也许他们只是在显示顺序方面做了一些考虑。
+
+## 解决方案
+
+即使能把所有的名字规则都一一归纳出来，在具体实施的时候还是会碰到下面两个问题：
+
+*   千奇百怪的规则，数据怎么集中存储？
+*   国家、民族、语言、名字规则并不是一一对应的，怎么判断用户的实际情况从而给他设定一个正确的表达形式？
+
+上述原因导致我们基本没有办法使用一种通用的模式来精确地存储与展示各种不同规则的名字。为此，W3C 主管国际化方面活动的 Richard Ishida 在其起草的一份[文档](http://www.w3.org/International/questions/qa-personal-names)中提出了如下几条建议：
+
+*   如果没有特殊需要，用全名，而不是姓、名分开。
+*   确实需要姓、名分开的，用 Family name、Given name 这种表达形式，而不是 First name、Last name 这种隐含了顺序方面意义的表达形式。
+*   如果姓、名分开只是为了叫起来亲切一点，那么不如使用“全名 + 昵称”组合，这样还可以照顾到那些有名无姓的名字形式。
+
+## 参考资料
+
+*   [Richard Ishida: Personal names around the world](http://www.w3.org/International/questions/qa-personal-names) 以及[相关评论](http://www.w3.org/International/wiki/Personal_names)。
+*   [Matthew Sachs: Internationalization of Names](http://www.zevils.com/2007/12/internationalization-of-names.html)。
+*   [WordPress Ticket #6148: Internationalization of personal names](http://core.trac.wordpress.org/ticket/6148)。
