@@ -2,26 +2,30 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://0x44.org/blog/2012/01/31/shakespeare-and-company/</loc>
-        <lastmod>2012-11-30T20:27:14+08:00</lastmod>
+        <lastmod>2013-07-03T02:06:54+08:00</lastmod>
     </url>
     <url>
         <loc>http://0x44.org/blog/2012/06/18/i18n-of-names/</loc>
-        <lastmod>2012-11-30T20:27:14+08:00</lastmod>
+        <lastmod>2013-07-03T02:06:54+08:00</lastmod>
     </url>
     <url>
         <loc>http://0x44.org/blog/2012/06/21/email-setup/</loc>
-        <lastmod>2012-11-30T20:27:14+08:00</lastmod>
+        <lastmod>2013-07-03T02:06:54+08:00</lastmod>
     </url>
     <url>
         <loc>http://0x44.org/blog/archives/</loc>
-        <lastmod>2012-11-30T20:27:14+08:00</lastmod>
+        <lastmod>2013-07-03T02:06:54+08:00</lastmod>
     </url>
     <url>
         <loc>http://0x44.org/about/</loc>
-        <lastmod>2012-11-30T22:20:09+08:00</lastmod>
+        <lastmod>2013-07-03T02:06:54+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://0x44.org/robots.txt</loc>
+        <lastmod>2013-07-03T02:06:54+08:00</lastmod>
     </url>
     <url>
         <loc>http://0x44.org/</loc>
-        <lastmod>2012-11-30T20:27:14+08:00</lastmod>
+        <lastmod>2013-07-03T02:06:54+08:00</lastmod>
     </url>
 </urlset>
